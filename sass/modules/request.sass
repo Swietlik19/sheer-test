@@ -1,0 +1,99 @@
+.request
+  @include myTransition
+  transition-property: opacity
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100vh
+  background-color: rgba(0,0,0,0.9)
+  z-index: 100
+
+  &--disabled
+    transition-property: all
+    opacity: 0
+    z-index: -5
+
+  &__content
+    position: relative
+    width: 500px
+
+  .close
+    top: 25px
+    right: 20px
+
+  &__form
+    width: 100%
+    padding: 24px 38px
+    text-align: center
+    background-color: rgba(238,242,245,0.9)
+
+  &__caption
+    margin-bottom: 19px
+    strong
+      display: block
+      margin: 0 auto
+      margin-bottom: 17px
+      width: 70%
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 700
+      text-transform: uppercase
+    p
+      font-size: 14px
+      line-height: 18px
+      font-weight: 400
+
+  .input__wrap
+    position: relative
+    width: 100%
+    margin-bottom: 17px
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      display: block
+      width: 44px
+      height: 44px
+      background-color: #eef2f5
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: auto
+      border: 1px solid #c9c9c6
+    &--name
+      &::after
+        background-image: url('../img/icon-form-name.svg')
+    &--phone
+      margin-bottom: 23px
+      &::after
+        background-image: url('../img/icon-form-phone.svg')
+
+  &__input
+    @include myTransition
+    width: 100%
+    height: 44px
+    padding: 10px
+    background-color: #eef2f5
+    border: 1px solid #c9c9c6
+    outline: none
+    &:focus
+      box-shadow: 0 0 10px rgba($accent,0.3)
+
+  &__btn
+    width: 100%
+
+  @include media-breakpoint-down(lg)
+    &__caption
+      strong
+        width: 180px
+        font-size: 20px
+  @include media-breakpoint-down(sm)
+    &__content
+      width: 70%
+  @include media-breakpoint-down(xs)
+    &__content
+      width: 90%

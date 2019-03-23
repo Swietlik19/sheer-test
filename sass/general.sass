@@ -1,0 +1,80 @@
+/* ОБЩИЕ СТИЛИ */
+body
+  color: $body-color
+  background-color: $body-bg
+  font-family: $ff-main
+
+img
+  width: 100%
+  vertical-align: middle
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+a, button
+  cursor: pointer
+  border: none
+  outline: none
+  background: none
+  text-decoration: none
+
+.title1
+  position: relative
+  width: 625px
+  padding: 30px 44px
+  font-size: 36px
+  line-height: 1.2
+  font-weight: 700
+  text-transform: uppercase
+  color: #fff
+  background-color: $accent
+  &::after
+    content: ''
+    position: absolute
+    bottom: -53px
+    right: 73px
+    display: block
+    width: 74px
+    height: 53px
+    background: linear-gradient(to top right, transparent 50%, $accent 50%)
+  @include media-breakpoint-down(lg)
+    font-size: 30px
+    &::after
+      right: 143px
+  @include media-breakpoint-down(md)
+    width: 100%
+    &::after
+      content: none
+  @include media-breakpoint-down(sm)
+    font-size: 26px
+  @include media-breakpoint-down(xs)
+    padding: 15px 20px
+    font-size: 20px
+
+.title2
+
+.title3
+  font-size: 24px
+  line-height: 1.2
+  font-weight: 700
+  color: #fefefe
+  text-transform: uppercase
+  @include media-breakpoint-down(xs)
+    font-size: 20px
+
+.title3__desc
+  display: block
+  font-size: 14px
+  line-height: 20px
+  font-weight: 400
+  color: #fff
+  text-transform: none
+  @include media-breakpoint-down(xs)
+    font-size: 16px
+
+.accent-color
+  color: $accent
+
+/* . общие стили  */
